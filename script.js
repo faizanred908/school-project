@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainContent = document.querySelector('main');
   const logoContainer = document.querySelector('.logo-container');
 
-  if (openBtn && closeBtn && nav) {
+  if (openBtn && closeBtn && nav && menuList) {
     // Set initial state: if on mobile, the hidden menu should be inert
     const isMobile = () => window.matchMedia('(max-width: 1035px)').matches;
     if (isMobile()) menuList.inert = true;
@@ -16,15 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const openMenu = () => {
       nav.classList.add('nav-open');
       menuList.inert = false;
-      mainContent.inert = true;
-      logoContainer.inert = true;
+      if (mainContent) mainContent.inert = true;
+      if (logoContainer) logoContainer.inert = true;
     };
 
     const closeMenu = () => {
       nav.classList.remove('nav-open');
       menuList.inert = true;
-      mainContent.inert = false;
-      logoContainer.inert = false;
+      if (mainContent) mainContent.inert = false;
+      if (logoContainer) logoContainer.inert = false;
     };
 
     openBtn.addEventListener('click', openMenu);
