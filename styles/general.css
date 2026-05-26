@@ -23,7 +23,7 @@ body {
       rgba(207, 247, 243, 0.8), 
       rgba(16, 156, 140, 0.6)
     ), 
-    url('/images/CDG-background-img.jpeg');
+    url('../images/CDG-background-img.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
